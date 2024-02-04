@@ -3,10 +3,7 @@
 #include <stdarg.h>
 
 int _putchar(char c);
-<<<<<<< HEAD
 int _int_print(va_list list);
-=======
->>>>>>> b8567a7f9701435a4230153c911c099579cb2d62
 int _printf(const char *format, ...);
 /**
  * typedef struct specs - the structure to var_functions 
