@@ -28,22 +28,31 @@ int _printf(const char *format, ...)
 			{
 				int var_char = va_arg(list, int);
 				printed_num +=_putchar(var_char);
+				format++;
 			}
-			if (format[i] == 's')
+			else if (format[i] == 's')
 			{
 				char *var_string = va_arg(list, char *);
 				j = 0;
 				for (; var_string[j] != '\0'; j++, var_string++)
 					printed_num += _putchar(*var_string);
+				
+				printed_num += _putchar(*var_string);
+				format++;
 			}
-			if (format[i] == 'd')
+			else if (format[i] == 'd')
 			{
 				printed_num += _int_print(list);
 				format++;
 			}
-			if (format[i] == "%"[0])
+			else if (format[i] == "%"[0])
 			{
 				printed_num += _putchar(37);
+				format++;
+			}
+			else
+			{
+				printed_num += _putchar(format[(i - 1)]);
 			}
 		}
 		printed_num += _putchar(format[i]);
